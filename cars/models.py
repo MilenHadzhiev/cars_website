@@ -1,3 +1,4 @@
+from django.core.validators import MaxLengthValidator
 from django.db import models
 
 
@@ -8,5 +9,5 @@ class Car(models.Model):
     engine = models.CharField(max_length=15)
     horsepower = models.IntegerField()
     torque = models.IntegerField()
-    year = models.IntegerField(max_length=4)
-
+    year = models.IntegerField(MaxLengthValidator(4))
+    cost = models.IntegerField()
